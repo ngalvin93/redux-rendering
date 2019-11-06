@@ -17,11 +17,20 @@ const initialState = [
     },
 ];
 
+const deepCopy = (x) => JSON.parse(JSON.stringify(x))
+
 const reducer = (state = initialState, action) => {
     // Handle actions here - make sure you don't mutate the state!
+    console.log('IN THE REDUCER')
+    const stateCopy = deepCopy(state)
+    console.log('MADE A COPY OF STATE: ', stateCopy)
     const { type } = action;
-
+    
     // ACTION: Add a random circle
+    switch (type) {
+        case 'ADD_CIRCLE':
+            console.log('IN THE CASE')
 
+    }
     return state;
 }
