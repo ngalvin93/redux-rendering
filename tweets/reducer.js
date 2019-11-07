@@ -38,15 +38,29 @@ const initialState = [
 ]
 ;
 
+const sortLikes = (tweets) => tweets.sort((a,b) => a.likes - b.likes)
+const sortRetweets = (tweets) => tweets.sort((a,b) => a.retweets - b.retweets)
+const sortReplys = (tweets) => tweets.sort((a,b) => a.replies - b.replies)
+
 const reducer = (state = initialState, action) => {
     // Handle actions here - make sure you don't mutate the state!
     const { type } = action;
 
+    switch (type) {
     // ACTION 1 - Sort by # likes
-
+        case 'LIKE': 
+        console.log('like reducer...')
+        sortLikes(state)
+        break
     // ACTION 2 - Sort by # retweets
-
+        case 'RETWEET':
+        console.log('retweet reducer...')
+        sortRetweets(state)
+        break
     // ACTION 3 - Sort by # replies
-    
+        case 'REPLY':
+        console.log('reply reducer...')
+        sortReplys(state)
+    }
     return state;
 }
