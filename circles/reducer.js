@@ -29,8 +29,11 @@ const reducer = (state = initialState, action) => {
     // ACTION: Add a random circle
     switch (type) {
         case 'ADD_CIRCLE':
-            console.log('IN THE CASE')
-
+            stateCopy.push({
+                radius: Math.floor(Math.random() * 100) + 1,
+                color: `${"#" + Math.random().toString(16).slice(2, 8)}`
+            })
+            return stateCopy
     }
     return state;
 }
