@@ -1,8 +1,8 @@
 const render = (state) => {
-    const tweetsDOM = document.getElementById('tweetsContainer');
+  const tweetsDOM = document.getElementById('tweetsContainer')
 
-    const tweetsHTML = state.map(function (tweet) {
-        return `
+  const tweetsHTML = state.map(function (tweet) {
+    return `
             <div class="bg-white p-2 m-2 w-50">
                 <div class="d-flex align-items-center">
                     <img width="50" src="${tweet.user.profilePic}" />
@@ -25,9 +25,9 @@ const render = (state) => {
                 </div>
             </div>
         `
-    });
+  })
 
-    tweetsDOM.innerHTML = `
+  tweetsDOM.innerHTML = `
         <div class="d-flex flex-column justify-content-start align-items-center mt-5">
             ${tweetsHTML.join('')}
         </div>
